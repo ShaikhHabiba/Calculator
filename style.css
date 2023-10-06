@@ -1,0 +1,87 @@
+body {
+    font-size: 2.5vh;
+    top: 15%;
+    left: 40%;
+    margin: 0 auto;
+    background-color:#154167;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#calculator {
+    width: auto;
+    height: auto;
+    padding: 1.5vh;
+    border: 5px solid #666666;
+    border-radius: 15px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.box {
+    text-align:right;
+    font-size: 2.8vh;
+    height: 3vh;
+    line-height: 3vh;
+    padding: 1em;
+    border: 2px solid #2b7cb3; /*#e68a00;*/
+    color: white;           /* rgb(243, 238, 238);*/
+    border-radius: 15px;
+    background-color: black;
+}
+
+#last_operation_history {
+    height: 1.8vh;
+    font-size: 1.8vh;
+    text-align:right;
+    padding-right: 1.5vh;
+    color: rgb(177,176,176);
+    border: 2px solid #2b7cb3;  /*#e68a00;*/
+    background-color: black;  /* rgb(10, 10, 10);*/
+}
+
+button {
+    width:9vh;
+    height: 9vh;
+    font-weight:bold;
+    font-size: 3vh;
+    color: rgb(245, 239, 239);
+    background-color:#141414; /*#666666;*/
+    border-radius: 50%;
+    border: 1px solid #6ec1c7;
+}
+
+#backspace_btn {
+    background-image: url("image/cleanmark.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 1.7em;
+}
+
+button:hover {
+    background-color:#6cccdd;/*#999999;*/
+    cursor: pointer;
+}
+
+.operator {
+    background-color:#141414; /*#e68a00;*/
+}
+
+.operator:hover {
+    background: color #f6c4df; /*#ffd11a;*/
+}
+
+#equal_sign {
+    width: 100%;
+    border-radius: 15px;
+}
