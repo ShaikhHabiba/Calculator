@@ -1,21 +1,21 @@
-var operators = ["+", "-", "/", "*"];
+let operators = ["+", "-", "/", "*"];
 
-var box = null;
-var last_operation_history = null;
-var operator = null;
-var equal = null;
-var dot = null;
+let box = null;
+let last_operation_history = null;
+let operator = null;
+let equal = null;
+let dot = null;
 
-var firstNum = true;
+let firstNum = true;
 
-var numbers = [];
-var operator_value;
-var last_button;
-var calc_operator;
+let numbers = [];
+let operator_value;
+let last_button;
+let calc_operator;
 
-var total;
+let total;
 
-var key_combination = []
+let key_combination = []
 function button_number(button) {
 
     operator = document.getElementsByClassName("operator");
@@ -165,9 +165,9 @@ function button_number(button) {
  // highlight operator button when selected
 function showSelectedOperator(){
 
-    var elements = document.getElementsByClassName("operator");
+    let elements = document.getElementsByClassName("operator");
 
-    for (var i=0; i<elements.length; i++){
+    for (let i=0; i<elements.length; i++){
         elements[i].style.backgroundColor  = "#2b7cb3";/*"#e68a00";*/
     }
 
@@ -223,13 +223,13 @@ function button_clear(){
 function backspace_remove(){
 
     box = document.getElementById("box");
-    var elements = document.getElementsByClassName("operator");
+    let elements = document.getElementsByClassName("operator");
 
-    for (var i=0; i<elements.length; i++){
+    for (let i=0; i<elements.length; i++){
         elements[i].style.backgroundColor  = "#2b7cb3";/*"#e68a00";*/
     }
 
-    var last_num = box.innerText;
+    let last_num = box.innerText;
     last_num = last_num.slice(0, -1)
     
     box.innerText = last_num
@@ -291,7 +291,7 @@ function plus_minus(){
 // function to calculate square root of the number currently on screen
 function square_root(){
     box = document.getElementById("box");
-    var square_num = Math.sqrt(box.innerText)
+    let square_num = Math.sqrt(box.innerText)
     box.innerText = square_num
     numbers.push(square_num)
 }
@@ -299,7 +299,7 @@ function square_root(){
 // function to calculate the division of 1 with the number currently on screen
 function division_one(){
     box = document.getElementById("box");
-    var square_num = 1/box.innerText
+    let square_num = 1/box.innerText
     box.innerText = square_num
     numbers.push(square_num)
 }
@@ -307,14 +307,14 @@ function division_one(){
 // function to calculate the power of the number currently on screen
 function power_of(){
     box = document.getElementById("box");
-    var square_num =Math.pow(box.innerText, 2)
+    let square_num =Math.pow(box.innerText, 2)
     box.innerText = square_num
     numbers.push(square_num)
 }
 
 // function to calculate the percentage of a number
 function calculate_percentage(){
-    var elements = document.getElementsByClassName("operator");
+    let elements = document.getElementsByClassName("operator");
     box = document.getElementById("box");
 
     if (numbers.length > 0 && typeof last_operator != "undefined"){
@@ -332,7 +332,7 @@ function calculate_percentage(){
     numbers.push(box.innerText)
 
     // deselect operator if any selected
-    for (var i=0; i<elements.length; i++){
+    for (let i=0; i<elements.length; i++){
         elements[i].style.backgroundColor  = "#2b7cb3";/*"#e68a00";*/
     }
 }
@@ -343,7 +343,7 @@ function clear_entry(){
 
     if (numbers.length > 0 && typeof last_operator != "undefined"){
         box.innerText = 0
-        var temp = numbers[0]
+        let temp = numbers[0]
         numbers = []
         numbers.push(temp)
         firstNum = true;
@@ -356,18 +356,18 @@ document.addEventListener('keyup', keyReleased);
 // function to capture keydown events
 function keyPressed(e) {
     e.preventDefault()
-    var equal = document.getElementById("equal_sign").value;
-    var dot = document.getElementById("dot").value;
+    let equal = document.getElementById("equal_sign").value;
+    let dot = document.getElementById("dot").value;
 
     if (e.key == "Delete"){
         button_clear();
         return;
     }
 
-    var isNumber = isFinite(e.key);
-    var enterPress;
-    var dotPress;
-    var commaPress = false;
+    let isNumber = isFinite(e.key);
+    let enterPress;
+    let dotPress;
+    let commaPress = false;
 
     if (e.key == "Enter"){
         enterPress = equal;
@@ -405,9 +405,9 @@ function keyReleased(e){
     if (key_combination['ControlLeft'] && key_combination['KeyV']) {
         navigator.clipboard.readText().then(text => {
             box = document.getElementById("box");
-            var isNumber = isFinite(text);
+            let isNumber = isFinite(text);
             if (isNumber){
-                var copy_number = text
+                let copy_number = text
                 firstNum = true
                 button_number(copy_number)
             }
